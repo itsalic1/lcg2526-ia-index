@@ -1,0 +1,142 @@
+body {
+    font-family: 'Poppins', Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #7f5539;
+  }
+
+ .animation {
+    position: relative;
+    width: auto;
+    height: 100vh;
+    overflow: visible;
+  }
+
+  .animation video {
+   position: absolute;
+   top: 0;
+   left: 0; /* video posizionato in alto a sinistra del contenitore */
+   width: 100%;
+   height: 100%; /* adattare il video al contenitore */
+   object-fit: cover; /* riempie tutta la sezione senza deformare */
+   z-index: -1; /* posto sotto rispetto al resto */
+  }
+ 
+  .rblock {
+  width: 100%;
+  height: 75vh;
+  background-color: #9c6644;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 20px;
+  border-top: 10px dashed #6e4230;
+
+}
+
+.rimage {
+  width: 55%;
+  height: 80%;
+  margin-right: auto;
+  margin-left: 50px;
+  padding-right: 45px;
+  padding-left: 80px;
+  padding-top: 50px ;
+  margin-top: 20px;
+}
+
+.rcontent {
+  width: 45%;
+  height: 80%;
+  margin-left: auto; /*in questo modo vado a spingere a destra il contenuto, evitanto posizionamento a sinistra  */
+  padding-right: 110px;
+  padding-left: 45px;
+  padding-top: 50px;
+  margin-top: 20px;
+  text-align: justify;
+  color: whitesmoke;
+  }
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6e4230;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.button:hover {
+    background-color: #b08969;
+    color: white;
+  }
+
+  a:link {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+  a:visited { /* cambia il colore del link una volta visitato */
+    color: whitesmoke;
+  }
+
+  .block-one {
+  width: 100%;
+  height: 75vh;
+  background-color: #6e4230;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  gap: 20px;
+  float: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  border-top: 10px dashed #b08969;
+  }
+
+  .ocontent {
+    width: 45%;
+    height: 80%;
+    margin-right: auto;
+    margin-left: 80px;
+    padding-left: 120px;
+    padding-right: 45px;
+    margin-top: 0px;
+    padding-bottom: 20px;
+    text-align: justify;
+    color: whitesmoke;
+  }
+
+  .oimage {
+  width: 30%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: 50px;
+  padding-left: 45px;
+  padding-right: 80px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  }
+
+  footer {
+    font-size: 0.8em;
+    padding: 20px 10px;
+    text-align: center;
+    background-color: #7f5539;
+    color: white;
+  }
+  
+ 
+
+
+
+
