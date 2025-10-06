@@ -1,0 +1,166 @@
+body {
+    font-family: 'Poppins', 'Helvetica', sans-serif;
+    font-size: 16px;
+    margin: 0;  
+}
+
+main {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 1.5em 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: 1px;
+    border-radius: 25px;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 10px;
+    z-index: 1000;
+}
+
+.menu {
+    display: flex;              
+    flex-direction: row;       
+    justify-content: center;    
+    align-items: center;        
+    gap: 10px;                  
+    height: 3.5rem;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 20px;
+    display: block;
+}
+
+.menu-item a:hover {
+    background-color: grey;
+}
+
+.menu-item {
+    flex-basis: 180px;
+    flex-grow: 0;
+    flex-shrink: 1;             
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    left: 0;
+    /*
+     * La proprietà "top: 100%" imposta un offset superiore pari al 100%
+     * del .menu-item che lo contiene.
+     * In questo modo è possibile posizionarlo al di sotto di .menu-item
+     */
+    top: 100%;
+    /*
+     * Con "width: 100%" la sua larghezza diventa pari al 100% della
+     * larghezza del .menu-item che lo contiene, quindi stessa larghezza.
+     */
+    width: 100%;
+    background-color: grey;
+    display: none;
+}
+
+.menu-item:hover .submenu {
+    display: block
+}
+
+
+.mobile-container {
+    display: none;         
+}
+
+.mobile-menu {
+    /* 
+     * Con la proprietà "position: absolute" questo elemento si posiziona
+     * rispetto a .navbar, in quanto è un suo contenitore ed è posizionato
+     * (.navbar ha "position: fixed").
+     */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    /*
+     * Con la proprietà seguente ci assicuriamo che il menù
+     * si estenda fino al bordo inferiore della viewport.
+     */
+    height: calc(100vh - 100%);
+    background-color: lightgrey;
+    padding: 2rem 0;
+    visibility: hidden;         
+}
+
+
+.mobile-container:focus-within .mobile-menu, .hamburger:focus + .mobile-menu {
+    visibility: visible;
+}
+
+
+.hamburger {
+    width: 28px;
+    height: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: white;
+}
+
+
+.mobile-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.mobile-container:focus-within + .mobile-close, .mobile-container:focus + .mobile-close {
+    visibility: visible;
+}
+
+/*
+ * Media query: le regole CSS al suo interno servono a mostrare il
+ * menù mobile e sono valide per larghezze della viewport fino a 600px
+ */
+@media (max-width: 600px) {
+    /* Nasconde il menu per schermi desktop */
+    .menu > .menu-item {
+        display: none;
+    }
+
+    /* Mostra il menu per schermi mobile */
+    .mobile-container {
+        display: block;
+    }
+}
